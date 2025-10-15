@@ -9,6 +9,13 @@ export default function Index() {
 
   const characters = [
     {
+      name: 'Shadow Milk Cookie',
+      rarity: 'Легендарный',
+      role: 'Шут Обмана',
+      image: 'https://cdn.poehali.dev/projects/91b30749-5793-4498-93d5-5a8dbad44913/files/fc572372-1ff8-43f6-a13b-c33d0d9391fc.jpg',
+      power: '⭐⭐⭐⭐⭐'
+    },
+    {
       name: 'Храбрец',
       rarity: 'Легендарный',
       role: 'Атака',
@@ -143,7 +150,7 @@ export default function Index() {
             <h2 className="text-5xl font-bold text-[#8B4513] mb-4">🍪 Персонажи</h2>
             <p className="text-xl text-gray-600">Собери коллекцию уникальных печенек-героев</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {characters.map((char, idx) => (
               <Card key={idx} className="game-card border-4 border-[#FFD93D] rounded-3xl overflow-hidden bg-gradient-to-br from-[#FFD93D]/20 to-[#FF6B9D]/20">
                 <CardContent className="p-0">
