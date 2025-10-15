@@ -12,7 +12,7 @@ export default function Index() {
       name: 'Shadow Milk Cookie',
       rarity: 'Легендарный',
       role: 'Шут Обмана',
-      image: 'https://cdn.poehali.dev/projects/91b30749-5793-4498-93d5-5a8dbad44913/files/6421266a-8582-4abe-ab3e-59178ddcc2de.jpg',
+      image: 'https://cdn.poehali.dev/projects/91b30749-5793-4498-93d5-5a8dbad44913/files/56f842d9-ef70-4b08-8226-24e6f5293ba7.jpg',
       power: '⭐⭐⭐⭐⭐'
     },
     {
