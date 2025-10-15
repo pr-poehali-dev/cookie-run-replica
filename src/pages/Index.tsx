@@ -3,10 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Index() {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeTab, setActiveTab] = useState('battle');
 
   const characters = [
     {
@@ -215,19 +214,41 @@ export default function Index() {
             <h2 className="text-5xl font-bold text-[#8B4513] mb-4">🎮 Игровой процесс</h2>
             <p className="text-xl text-gray-600">Захватывающие приключения ждут тебя!</p>
           </div>
-          <Tabs defaultValue="battle" className="w-full max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 bg-[#FFD93D]/30 p-2 rounded-2xl">
-              <TabsTrigger value="battle" className="rounded-xl font-bold text-lg data-[state=active]:bg-[#FF6B9D] data-[state=active]:text-white">
+          <div className="w-full max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 gap-2 bg-[#FFD93D]/30 p-2 rounded-2xl mb-8">
+              <Button
+                onClick={() => setActiveTab('battle')}
+                className={`rounded-xl font-bold text-lg ${
+                  activeTab === 'battle' 
+                    ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90' 
+                    : 'bg-transparent text-[#8B4513] hover:bg-[#FFD93D]/50'
+                }`}
+              >
                 Сражения
-              </TabsTrigger>
-              <TabsTrigger value="adventure" className="rounded-xl font-bold text-lg data-[state=active]:bg-[#FF6B9D] data-[state=active]:text-white">
+              </Button>
+              <Button
+                onClick={() => setActiveTab('adventure')}
+                className={`rounded-xl font-bold text-lg ${
+                  activeTab === 'adventure' 
+                    ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90' 
+                    : 'bg-transparent text-[#8B4513] hover:bg-[#FFD93D]/50'
+                }`}
+              >
                 Приключения
-              </TabsTrigger>
-              <TabsTrigger value="events" className="rounded-xl font-bold text-lg data-[state=active]:bg-[#FF6B9D] data-[state=active]:text-white">
+              </Button>
+              <Button
+                onClick={() => setActiveTab('events')}
+                className={`rounded-xl font-bold text-lg ${
+                  activeTab === 'events' 
+                    ? 'bg-[#FF6B9D] text-white hover:bg-[#FF6B9D]/90' 
+                    : 'bg-transparent text-[#8B4513] hover:bg-[#FFD93D]/50'
+                }`}
+              >
                 События
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value="battle" className="mt-8">
+              </Button>
+            </div>
+            
+            {activeTab === 'battle' && (
               <Card className="border-4 border-[#8B4513] rounded-3xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
@@ -255,8 +276,9 @@ export default function Index() {
                   </div>
                 </CardContent>
               </Card>
-            </TabsContent>
-            <TabsContent value="adventure" className="mt-8">
+            )}
+            
+            {activeTab === 'adventure' && (
               <Card className="border-4 border-[#8B4513] rounded-3xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
@@ -284,8 +306,9 @@ export default function Index() {
                   </div>
                 </CardContent>
               </Card>
-            </TabsContent>
-            <TabsContent value="events" className="mt-8">
+            )}
+            
+            {activeTab === 'events' && (
               <Card className="border-4 border-[#8B4513] rounded-3xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
@@ -313,8 +336,8 @@ export default function Index() {
                   </div>
                 </CardContent>
               </Card>
-            </TabsContent>
-          </Tabs>
+            )}
+          </div>
         </div>
       </section>
 
