@@ -1,38 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 51 100% 95%;
+    --foreground: 25 47% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 47% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 47% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 349 100% 70%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 100% 62%;
+    --secondary-foreground: 25 47% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 168 42% 56%;
+    --muted-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 207 100% 62%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 100% 90%;
+    --input: 45 100% 90%;
+    --ring: 349 100% 70%;
 
-    --radius: 0.5rem;
+    --radius: 1.5rem;
+
+    --cookie-brown: 25 47% 25%;
+    --cookie-pink: 349 100% 70%;
+    --cookie-gold: 45 100% 62%;
+    --cookie-mint: 168 42% 56%;
+    --cookie-blue: 207 100% 62%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +105,30 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Fredoka", sans-serif;
+  }
+}
+
+@layer utilities {
+  .cookie-text-stroke {
+    -webkit-text-stroke: 3px hsl(var(--cookie-brown));
+    paint-order: stroke fill;
+  }
+
+  .hover-bounce {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-bounce:hover {
+    transform: translateY(-8px);
+  }
+
+  .game-card {
+    transition: all 0.3s ease;
+  }
+
+  .game-card:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 }
